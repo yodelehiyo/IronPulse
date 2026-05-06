@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IRONPULSE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="better.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">🔥IRONPULSE</div>
+
+    
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+    
+    <nav class="nav">
+        <a href="#articles">Articles</a>
+        <a href="#workouts">Workouts</a>
+        <a href="#nutrition">Nutrition</a>
+        <a href="#about">About</a>
+    </nav>
+</header>
+
+<section class="front section-dark">
+        <div class="frontc">
+        <h1>IRONPULSE</h1>
+        <p>
+            Build Strength. Fuel your body. Transform your life.
+            A beginner-friendly fitness blog for those ready to take the first step.
+        </p>
+        <button class="btn">Start Reading</button>
+    </div>
+</section>
+
+<section class="about section-dark" id="about">
+        <div class="about-content">
+        <h5>WHY FITNESS MATTERS</h5>
+        <h2>MORE THAN JUST LIFTING</h2>
+        <p>
+            Fitness isn't about six-packs and selfies — it's about building a body and mind 
+            that can handle anything life throws at you. Regular exercise reduces stress, 
+            boosts energy, improves sleep, and adds years to your life.
+        </p>
+        <p>
+            Whether you're picking up a dumbbell for the first time or getting back after a long break, 
+            this blog is your no-judgment zone. Every article is written for real people with real lives.
+        </p>
+    </div>
+</section>
+
+<!--article-->
+<section class="articles section-dark" id="articles">
+        <div class="header2">
+        <span class="tag">FEATURED</span>
+        <h2 class="article-title">LATEST ARTICLES</h2>
+    </div>
+
+    <div class="article-grid">
+
+        <article class="article-card" onclick="openArticle(0)">
+                <div class="card">
+                <span class="category workout">WORKOUTS</span>
+                <span class="read-time">8min read</span>
+            </div>
+            <h3 class="card-title">Full-Body Strength Training for Beginners</h3>
+            <p class="description">
+                A simple 3-day split that builds real strength without overwhelming you. Perfect for your first month in the gym.
+            </p>
+            <button class="read-btn">Read Article →</button>
+        </article>
+
+        <article class="article-card" onclick="openArticle(1)">
+            <div class="card">
+                <span class="category nutrition">NUTRITION</span>
+                <span class="read-time">6min read</span>
+            </div>
+            <h3 class="card-title">Eating for Results: The 80/20 Rule</h3>
+            <p class="description">
+                You don't need a perfect diet. Learn how to eat well 80% of the time and still enjoy life while making gains.
+            </p>
+            <button class="read-btn">Read Article →</button>
+        </article>
+
+        <article class="article-card" onclick="openArticle(2)">
+            <div class="card">
+                <span class="category mindset">MINDSET</span>
+                <span class="read-time">5min read</span>
+            </div>
+            <h3 class="card-title">The Psychology of Consistency</h3>
+            <p class="description">
+                Why motivation fades and what to replace it with. Build habits that stick, even when you don't feel like it.
+            </p>
+            <button class="read-btn">Read Article →</button>
+        </article>
+
+        <article class="article-card" onclick="openArticle(3)">
+            <div class="card">
+                <span class="category recovery">RECOVERY</span>
+                <span class="read-time">7min read</span>
+            </div>
+            <h3 class="card-title">Rest Days Aren't Lazy Days</h3>
+            <p class="description">
+                Your muscles grow when you rest, not when you lift. Learn active recovery techniques that accelerate results.
+            </p>
+            <button class="read-btn">Read Article →</button>
+        </article>
+    </div>
+</section>
+
+<!-- ARTICLE MODAL -->
+<div class="article-overlay" id="articleOverlay" onclick="closeArticleOnOverlay(event)">
+    <div class="article-modal" id="articleModal">
+        <button class="modal-close" onclick="closeArticle()">✕</button>
+        <div class="modal-header">
+            <span class="modal-cat" id="modalCat"></span>
+            <span class="modal-time" id="modalTime"></span>
+        </div>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <div class="modal-body" id="modalBody"></div>
+    </div>
+</div>
+
+    <!-- workout -->
+<section class="workouts section-light" id="workouts">
+            <div class="workout-advanced-content">
+
+            <p class="week-label">WEEK 1</p>
+            <h2 class="advanced-title">BEGINNER WORKOUT</h2>
+            <p class="advanced-subtext">
+                No experience needed. This full-body routine hits every major muscle group.
+                Do it 3 times a week with rest days between.
+            </p>
+
+            <div class="advanced-list">
+
+                <div class="advanced-item"
+                     data-gif="https://media.giphy.com/media/bOOVsev68lNiX5NI4J/giphy.gif"
+                     data-tip="Keep chest up, drive through heels">
+                    <div>
+                        <h4>Barbell Squat</h4>
+                        <p>Legs & Core</p>
+                    </div>
+                    <span>3×12</span>
+                </div>
+
+                <div class="advanced-item"
+                     data-gif="https://media.giphy.com/media/rHGjuFX5FBRxn6AdCU/giphy.gif"
+                     data-tip="Elbows at 45°, body in a straight line">
+                    <div>
+                        <h4>Push-Ups</h4>
+                        <p>Chest & Triceps</p>
+                    </div>
+                    <span>3×10</span>
+                </div>
+
+                <div class="advanced-item"
+                     data-gif="https://media.giphy.com/media/qV9BbUG8jKerl7o7Nj/giphy.gif"
+                     data-tip="Lead with elbows to the hips">
+                    <div>
+                        <h4>Pull-Ups</h4>
+                        <p>Back & Biceps</p>
+                    </div>
+                    <span>3×10/side</span>
+                </div>
+
+                <div class="advanced-item"
+                     data-gif="https://media.giphy.com/media/6s1WPu2kkpM6evzuDT/giphy.gif"
+                     data-tip="Focus on the bottom part">
+                    <div>
+                        <h4>Dips</h4>
+                        <p>Chest, Shoulders, & Triceps</p>
+                    </div>
+                    <span>3×30s</span>
+                </div>
+
+                <div class="advanced-item"
+                     data-gif="https://media.giphy.com/media/t9ZjZq5Vam94bwPaGB/giphy.gif"
+                     data-tip="Front shin vertical, upright torso">
+                    <div>
+                        <h4>Lunges</h4>
+                        <p>Legs & Core</p>
+                    </div>
+                    <span>3×10/side</span>
+                </div>
+
+                <div class="advanced-item"
+                     data-gif="https://media.giphy.com/media/0Ow5iAid24AwuIbZrE/giphy.gif"
+                     data-tip="Full lockout overhead, core braced">
+                    <div>
+                        <h4>Military Press</h4>
+                        <p>Shoulders</p>
+                    </div>
+                    <span>3×10</span>
+                </div>
+
+            </div>
+
+            <div class="pro-tip">
+                <h4>💡 PRO TIP</h4>
+                <p>
+                    Focus on form over weight. A controlled rep with proper technique beats a sloppy heavy lift every time.
+                </p>
+            </div>
+
+        </div>
+
+    <!-- GIF Tooltip -->
+    <div class="gif-tooltip" id="gifTooltip">
+        <img id="gifImg" src="" alt="Exercise demo" />
+        <p class="gif-tip-text" id="gifTipText"></p>
+    </div>
+</section>
+
+    <!-- NUTRITION GUIDE -->
+<section class="nutrition section-dark" id="nutrition">
+    <div class="nutrition-header">
+        <p class="mini-tag">FUEL RIGHT</p>
+        <h2 class="nutrition-title">NUTRITION GUIDE</h2>
+    </div>
+
+    <div class="nutrition-grid">
+
+        <!-- MUSCLE GAIN -->
+        <div class="nutrition-card">
+            <h3>📈 MUSCLE GAIN</h3>
+            <ul>
+                <li><span>01</span> Eat in a slight caloric surplus — about <u>300–500 calories</u> above maintenance</li>
+                <li><span>02</span> Prioritize protein: aim for 1.6–2.2g per kg of bodyweight daily</li>
+                <li><span>03</span> Don't fear carbs — they fuel your workouts and recovery</li>
+                <li><span>04</span> Eat whole foods 80% of the time: lean meats, rice, oats, veggies, fruits</li>
+                <li><span>05</span> Stay hydrated — aim for at least 2.5 liters of water daily</li>
+            </ul>
+        </div>
+
+        <!-- FAT LOSS -->
+        <div class="nutrition-card">
+            <h3>🔥 FAT LOSS</h3>
+            <ul>
+                <li><span>01</span> Create a moderate deficit — about 300–500 calories below maintenance</li>
+                <li><span>02</span> Keep protein high to preserve muscle while losing fat</li>
+                <li><span>03</span> Focus on volume eating: big salads, lean proteins, fiber-rich foods</li>
+                <li><span>04</span> Add daily walks — 8,000–10,000 steps burns significant calories</li>
+                <li><span>05</span> Sleep 7–9 hours — poor sleep sabotages fat loss hormones</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- ✅ CALORIE CALCULATOR moved here, inside the nutrition section -->
+    <div class="calorie-calculator-pro">
+
+        <h3>CALORIE CALCULATOR</h3>
+
+        <div class="form-group">
+            <label>Gender</label>
+            <div class="radio-group">
+                <label><input type="radio" name="gender" value="male" checked> Male</label>
+                <label><input type="radio" name="gender" value="female"> Female</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Age</label>
+            <input type="number" id="age">
+        </div>
+
+        <div class="form-group">
+            <label>Weight (kg)</label>
+            <input type="number" id="weight">
+        </div>
+
+        <div class="form-group">
+            <label>Height (cm)</label>
+            <input type="number" id="height">
+        </div>
+
+        <div class="form-group">
+            <label>Activity</label>
+            <select id="activity">
+                <option value="1.2">Sedentary (office job)</option>
+                <option value="1.375">Light exercise</option>
+                <option value="1.55">Moderate exercise</option>
+                <option value="1.725">Active</option>
+                <option value="1.9">Very active</option>
+            </select>
+        </div>
+
+        <button onclick="calculateCalories()">Calculate!</button>
+
+        <p id="calorieResult"></p>
+
+    </div>
+
+</section>
+
+<!-- MINDSET / MOTIVATION SECTION -->
+<section class="mindset section-light">
+    <div class="mindset-header">
+        <p class="mini-tag">MINDSET</p>
+        <h2 class="mindset-title">STAY MOTIVATED</h2>
+        <p class="mindset-subtext">
+            Fitness isn't just about the body. It's about building a mindset that carries you through life.
+        </p>
+    </div>
+
+    <div class="mindset-grid">
+
+        <div class="mindset-card">
+            <div class="icon">🎯</div>
+            <h3>Set Small Goals</h3>
+            <p>
+                Don't aim for perfection. Aim for one more rep, one healthier meal,
+                or 10 more minutes of sleep. Small wins compound into massive change.
+            </p>
+        </div>
+
+        <div class="mindset-card">
+            <div class="icon">⚡</div>
+            <h3>Show Up on Bad Days</h3>
+            <p>
+                The workouts you do when you don't feel like it are the ones that define you.
+                Even 20 minutes counts. Consistency beats intensity.
+            </p>
+        </div>
+
+        <div class="mindset-card">
+            <div class="icon">✨</div>
+            <h3>Celebrate Progress</h3>
+            <p>
+                Take photos, log your weights, track your energy levels.
+                Looking back at where you started is the most powerful motivator.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="quote">
+        "THE ONLY BAD WORKOUT IS THE ONE THAT DIDN'T HAPPEN."
+    </div>
+
+</section>
+
+<footer class="site-footer">
+    <div class="footer-inner">
+        <div class="footer-left">
+            🔥 IRONPULSE
+        </div>
+
+        <div class="footer-center">
+            © 2026 IronPulse. Built to inspire. Train hard, stay humble.
+        </div>
+
+        <div class="footer-right">
+            <a href="https://www.instagram.com/wusaphmane_/">Instagram</a>
+            <a href="https://www.facebook.com/yoseanf">Facebook</a>
+            <a href="https://open.spotify.com/user/31ocswxz2gskwyca6leauev65ddu">Spotify</a>
+        </div>
+    </div>
+</footer>
+
+<script src="better.js"></script>
+</body>
+</html>
